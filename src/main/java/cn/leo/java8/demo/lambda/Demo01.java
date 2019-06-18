@@ -1,9 +1,16 @@
 package cn.leo.java8.demo.lambda;
 
+import java.lang.reflect.Method;
+
 public class Demo01 {
     public static void main(String[] args) {
         MathOperation add = (x, y) -> x + y;
         System.out.println(add.operate(1, 1));
+        System.out.println(add.getClass());
+        for (Method method : add.getClass().getMethods()) {
+            System.out.println(method);
+        }
+
 
         MathOperation minus = (x, y) -> x - y;
         System.out.println(minus.operate(1, 1));
