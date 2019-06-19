@@ -1,7 +1,5 @@
 package cn.leo.java8.demo.lambda;
 
-import jdk.management.resource.ResourceId;
-
 import java.util.function.Supplier;
 
 public class Demo02 {

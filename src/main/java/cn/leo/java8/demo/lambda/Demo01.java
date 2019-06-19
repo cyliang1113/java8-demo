@@ -6,7 +6,7 @@ public class Demo01 {
     public static void main(String[] args) {
         MathOperation add = (x, y) -> x + y;
         System.out.println(add.operate(1, 1));
-        System.out.println(add.getClass());
+        System.out.println(add);
         for (Method method : add.getClass().getMethods()) {
             System.out.println(method);
         }
@@ -15,8 +15,9 @@ public class Demo01 {
         MathOperation minus = (x, y) -> x - y;
         System.out.println(minus.operate(1, 1));
 
-        MathOperation add2 = Add::operate;
-        System.out.println(add2.operate(1, 2));
+       MathOperation add2 = Add::operate;
+       System.out.println(add2);
+       System.out.println(add2.operate(1, 2));
     }
 
 
