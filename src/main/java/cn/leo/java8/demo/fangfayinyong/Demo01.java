@@ -7,6 +7,10 @@ import java.util.function.Consumer;
 public class Demo01 {
     public static void main(String[] args) {
         List<Integer> list = Arrays.asList(1, 3, 5, 7);
+        each(list, (t) -> {
+            t++;
+            System.out.println(t);
+        });
         each(list, System.out::println);
 
     }
@@ -16,5 +20,9 @@ public class Demo01 {
             opt.accept(t);
         }
 
+    }
+
+    public static void print(Object o){
+        System.out.println(o);
     }
 }
