@@ -13,6 +13,10 @@ import java.util.Arrays;
  *
  */
 public class Demo01 {
+    static {
+        System.setProperty("jdk.internal.lambda.dumpProxyClasses", ".");
+    }
+
     public static void main(String[] args) {
         MathOperation add = (x, y) -> x + y;
         System.out.println(add.operate(1, 1));
