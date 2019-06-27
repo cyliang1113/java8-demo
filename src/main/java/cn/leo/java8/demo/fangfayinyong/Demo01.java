@@ -1,6 +1,5 @@
 package cn.leo.java8.demo.fangfayinyong;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -12,11 +11,7 @@ public class Demo01 {
 
     public static void main(String[] args) {
         List<Integer> list = Arrays.asList(1, 3, 5, 7);
-        each(list, (t) -> {
-            t++;
-            System.out.println(t);
-        });
-        each(list, System.out::println);
+        each(list, Demo01::print);
     }
 
     public static <T> void each(List<T> list, Consumer<T> opt) {

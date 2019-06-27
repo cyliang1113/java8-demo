@@ -1,18 +1,20 @@
 package cn.leo.java8.demo.lambda;
 
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class Demo02 {
-    public static void main(String[] args) {
-        Thread thread1 = new Thread(() -> print());
-        Thread thread2 = new Thread(Demo02::print);
-        thread1.start();
-        thread2.start();
-        Supplier supplier = () -> "Car";
-        System.out.println(supplier.get());
+    static{
+        System.setProperty("jdk.internal.lambda.dumpProxyClasses", ".");
+//        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
     }
 
-    public static void print() {
-        System.out.println(Thread.currentThread().getName());
+    public static void main(String[] args) {
+
+        Thread thread1 = new Thread(() -> System.out.println("Hello"));
+        thread1.start();
+        Consumer consumer = System.out::println;
+        consumer.accept("World");
     }
+
 }

@@ -34,7 +34,7 @@ public class SerializedLambda implements Serializable {
                 ObjectInputStream objIn = new ObjectInputStream(new ByteArrayInputStream(SerializeUtils.serialize(lambda))) {
                     protected Class<?> resolveClass(ObjectStreamClass objectStreamClass) throws IOException, ClassNotFoundException {
                         Class<?> clazz = super.resolveClass(objectStreamClass);
-                        return clazz == java.lang.invoke.SerializedLambda.class ? cn.leo.java8.demo.SerializedLambda.class : clazz;
+                        return clazz == java.lang.invoke.SerializedLambda.class ? SerializedLambda.class : clazz;
                     }
                 };
                 Throwable var2 = null;
