@@ -16,6 +16,7 @@ public class Demo02 {
     public static void main(String[] args) {
         List<Person> peopleList = Arrays.asList(new Person("Tom"), new Person("Davide"));
         each(peopleList, Person::getName);
+//        each(peopleList, t -> t);
     }
 
     public static <T, R> void each(List<T> list, SFunction<T, R> func) {
@@ -24,7 +25,6 @@ public class Demo02 {
             System.out.println(resolve);
             func.apply(t);
         }
-
     }
 
     @Data
